@@ -94,17 +94,192 @@
         @media (max-width: 600px) {
             .hero-text h1 { font-size: 2rem; }
         }
+
+	.generalist-hero {
+    text-align: center;
+    padding: 40px 20px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.mission-statement {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: #444;
+}
+
+.capabilities-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    padding: 40px 0;
+}
+
+.cap-card {
+    background: #f9f9f9;
+    padding: 25px;
+    border-radius: 8px;
+    border-left: 4px solid #2c3e50; /* Navy Blue Accent */
+    transition: transform 0.2s;
+}
+
+.cap-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.cap-card i {
+    font-size: 2rem;
+    color: #2c3e50;
+    margin-bottom: 15px;
+}
+
+.cap-card h3 {
+    margin-top: 0;
+    color: #333;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
     </style>
 </head>
 <body>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+<!--
+<section class="generalist-hero">
+    <h2>Systems · Design · Operations</h2>
+    <p class="mission-statement">
+        I am a high-aptitude fixer who thrives where technical discipline meets creative strategy. 
+        Whether I’m navigating sonar systems, designing brand identities, or optimizing 
+        multilingual logistics hubs, my goal is the same: <strong>Master the complexity and streamline the results.</strong>
+    </p>
+</section>
 
+<div class="capabilities-grid">
+    <div class="cap-card">
+        <i class="fas fa-globe-americas"></i>
+        <h3>Global Systems</h3>
+        <p><strong>Advanced Japanese (N1):</strong> Professional fluency built through years of living and working in Tokyo and Sasebo.</p>
+        <p><strong>Professional Spanish:</strong> Utilized daily for operational coordination and team mentorship.</p>
+    </div>
+
+    <div class="cap-card">
+        <i class="fas fa-pen-nib"></i>
+        <h3>Visual Communication</h3>
+        <p><strong>Graphic Design (A.A.):</strong> Highest Honors (3.8 GPA). Specialist in layout, typography, and brand systems.</p>
+        <p><strong>Industrial Precision:</strong> Bringing Naval-grade discipline to creative workflows.</p>
+    </div>
+
+    <div class="cap-card">
+        <i class="fas fa-gears"></i>
+        <h3>Operational Logic</h3>
+        <p><strong>Technical Fixer:</strong> Expert in WMS (Körber One) and high-stakes error resolution for global retailers.</p>
+        <p><strong>Naval Veteran:</strong> Former STG2 (Sonar Technician) trained in complex technical data and team leadership.</p>
+    </div>
+</div>
+
+<section class="verification" style="padding: 40px 20px; background: #f4f4f4; border-top: 1px solid #ddd;">
+    <h3 style="text-align: center; color: #333;">Verification & Credentials</h3>
+    <div style="display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; text-align: center;">
+        
+        <div>
+            <i class="fas fa-shield" style="font-size: 2rem; color: #2c3e50;"></i>
+            <p><strong>U.S. Navy DD-214</strong><br>Honorable Discharge<br><small>(Available upon request)</small></p>
+        </div>
+
+        <div>
+            <i class="fas fa-graduation-cap" style="font-size: 2rem; color: #2c3e50;"></i>
+            <p><strong>A.A. Graphic Design</strong><br>Highest Honors (3.8 GPA)<br>Fresno City College</p>
+        </div>
+
+        <div>
+            <i class="fas fa-language" style="font-size: 2rem; color: #2c3e50;"></i>
+            <p><strong>Japanese N1 Curriculum</strong><br>Professional Fluency<br>Immersive Work Experience</p>
+        </div>
+
+    </div>
+</section>
+
+	<section class="methodology" style="padding: 60px 20px; max-width: 900px; margin: 0 auto;">
+    <h2 style="text-align: center; border-bottom: 2px solid #2c3e50; display: inline-block; padding-bottom: 10px;">Methodology</h2>
+    
+    <div style="display: flex; gap: 30px; margin-top: 40px; flex-wrap: wrap;">
+        <div style="flex: 1; min-width: 250px;">
+            <h4 style="color: #e67e22;">01. Audit</h4>
+            <p>Mastering the complexity. I dive into the manuals, the data, and the current workflow to find the friction points.</p>
+        </div>
+        <div style="flex: 1; min-width: 250px;">
+            <h4 style="color: #e67e22;">02. Bridge</h4>
+            <p>Connecting the people. I use my linguistic and interpersonal background to ensure everyone—regardless of department or language—is on the same page.</p>
+        </div>
+        <div style="flex: 1; min-width: 250px;">
+            <h4 style="color: #e67e22;">03. Optimize</h4>
+            <p>Designing the solution. I apply visual and operational logic to create a cleaner, faster, and more reliable system.</p>
+        </div>
+    </div>
+</section>
+
+	<section class="performance-metrics" style="padding: 60px 20px; text-align: center; background-color: #fcfcfc;">
+    <h2 style="margin-bottom: 40px; color: #2c3e50;">Performance by the Numbers</h2>
+    
+    <div style="display: flex; justify-content: space-around; flex-wrap: wrap; gap: 20px;">
+        
+        <div style="flex: 1; min-width: 200px;">
+            <span style="font-size: 3rem; font-weight: bold; color: #e67e22;">19</span>
+            <p style="font-weight: bold; margin-top: 5px;">Units Per Semester</p>
+            <p style="font-size: 0.9rem; color: #666;">Maintained a 3.8 GPA while carrying a maximum-capacity course load at Fresno City College.</p>
+        </div>
+
+        <div style="flex: 1; min-width: 200px;">
+            <span style="font-size: 3rem; font-weight: bold; color: #2c3e50;">450</span>
+            <p style="font-weight: bold; margin-top: 5px;">Units Per Hour</p>
+            <p style="font-size: 0.9rem; color: #666;">Consistently ranked in the Top 5% for pick rates during Amazon peak operations.</p>
+        </div>
+
+        <div style="flex: 1; min-width: 200px;">
+            <span style="font-size: 3rem; font-weight: bold; color: #e67e22;">N1</span>
+            <p style="font-weight: bold; margin-top: 5px;">Japanese Curriculum</p>
+            <p style="font-size: 0.9rem; color: #666;">Advanced technical and interpersonal fluency developed through immersive living and study.</p>
+        </div>
+
+        <div style="flex: 1; min-width: 200px;">
+            <span style="font-size: 3rem; font-weight: bold; color: #2c3e50;">STG2</span>
+            <p style="font-weight: bold; margin-top: 5px;">Naval Rank</p>
+            <p style="font-size: 0.9rem; color: #666;">Second Class Sonar Technician; disciplined in technical systems and maritime operations.</p>
+        </div>
+
+    </div>
+</section>
+
+	<section class="education-highlight" style="padding: 40px; background: #fff; border: 1px solid #eaeaea; border-radius: 8px;">
+    <h3 style="text-transform: uppercase; color: #2c3e50; border-bottom: 2px solid #e67e22; display: inline-block;">Academic Foundation</h3>
+    
+    <div style="margin-top: 20px;">
+        <h4 style="margin-bottom: 5px;">Associate in Arts: Graphic Communications & Design</h4>
+        <p style="margin-top: 0; color: #666;"><em>Fresno City College | Graduated with Highest Honors (3.8 GPA)</em></p>
+        <ul style="line-height: 1.6;">
+            <li><strong>Extended Curriculum:</strong> Completed a high-credit program spanning advanced typography, brand identity, and industrial production standards.</li>
+            <li><strong>Web Design Certification:</strong> Earned a dual Certificate of Achievement focused on UI/UX logic and digital systems.</li>
+            <li><strong>Technical Mastery:</strong> Trained in the Adobe Creative Suite to produce market-validated work like the "Fresposter."</li>
+        </ul>
+    </div>
+</section>
+
+	<div class="cap-card">
+    <i class="fas fa-graduation-cap"></i>
+    <h3>Academic Capacity</h3>
+    <p><strong>A.A. Graphic Communications:</strong> Highest Honors (3.8 GPA).</p>
+    <p><strong>High-Output Performance:</strong> Successfully navigated back-to-back 19-unit semesters, demonstrating a superior capacity for volume and complex project management.</p>
+    <p><strong>Dual Certification:</strong> Earned both Graphic Design and Web Design credentials concurrently.</p>
+</div>
+-->
     <header class="hero">
         <div class="hero-text reveal">
             <h1>Thomas Wayne Manson</h1>
-            <p>Graphic Designer | Navy Veteran | Logistics Professional</p>
+            <!--<p>Graphic Designer | Navy Veteran | Logistics Professional</p>-->
             <p>Stockton, California</p>
         </div>
     </header>
+<!--
 
     <section class="reveal">
         <h2>About Me</h2>
@@ -149,6 +324,22 @@
         <p><strong>Japanese Language:</strong> Advanced (N1-curriculum trained).</p>
     </section>
 
+	<section class="contact-section" style="text-align: center; padding: 60px 20px; background: #2c3e50; color: white; border-radius: 8px;">
+    <h2 style="color: white;">Let’s Solve Something Together</h2>
+    <p style="font-size: 1.1rem; max-width: 600px; margin: 0 auto 30px;">
+        I am currently open to new opportunities—from full-time operational roles to creative design projects and cross-cultural consulting. 
+    </p>
+    
+    <div class="contact-links" style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;">
+        <a href="mailto:thomas_wayne_manson@icloud.com" style="background: #e67e22; color: white; padding: 12px 25px; text-decoration: none; border-radius: 5px; font-weight: bold;">
+            <i class="fas fa-envelope"></i> Get In Touch
+        </a>
+        <a href="https://www.linkedin.com/in/YOUR-LINKEDIN" target="_blank" style="background: white; color: #2c3e50; padding: 12px 25px; text-decoration: none; border-radius: 5px; font-weight: bold;">
+            <i class="fab fa-linkedin"></i> LinkedIn
+        </a>
+    </div>
+</section>
+-->
     <footer class="reveal">
         <p>Contact: <a href="mailto:thomas_wayne_manson@icloud.com"> thomas_wayne_manson@icloud.com </a></p>
         <p>© 2026 Thomas Wayne Manson.</p>
