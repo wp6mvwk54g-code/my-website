@@ -1,0 +1,379 @@
+/* ==========================================================================
+   1. FONTS & SELF-HOSTING BOILERPLATE
+   ========================================================================== */
+
+/* Quicksand - Headers (Regular & Italic placeholders provided) */
+@font-face {
+    font-family: 'Quicksand';
+    src: url('fonts/Quicksand-VariableFont_wght.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Lora - Body Copy */
+@font-face {
+    font-family: 'Lora';
+    src: url('fonts/Lora-VariableFont_wght.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Lora';
+    src: url('fonts/Lora-Italic-VariableFont_wght.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+}
+
+/* ==========================================================================
+   2. GLOBAL STYLES & TYPOGRAPHY
+   ========================================================================== */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Lora', Georgia, serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #fff;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Quicksand', sans-serif;
+    font-weight: normal;
+    margin-bottom: 1rem;
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+}
+
+p, ul, ol {
+    margin-bottom: 1.2rem;
+}
+
+ul, ol {
+    padding-left: 2rem;
+}
+
+/* ==========================================================================
+   3. STICKY HEADER & LOGO TOGGLE
+   ========================================================================== */
+.site-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 80px;
+    background-color: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo-container {
+    position: relative;
+    /* Bounded container dimensions expanded to let the vector wordmark scale up */
+    width: 280px;  /* Bumped up from 200px */
+    height: 60px;  /* Bumped up from 50px to fill the 80px header height better */
+}
+
+.logo {
+    position: absolute;
+    top: 0;
+    left: 50%; /* Centers the logos horizontally inside the wider container */
+    transform: translateX(-50%);
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    transition: opacity 0.4s ease-in-out, transform 0.4s ease-in-out;
+}
+
+/* Default States (At Top of Page) */
+.logo-wordmark {
+    opacity: 1;
+    z-index: 2; /* Keeps wordmark active and on top at the top of the page */
+    pointer-events: auto;
+}
+
+.logo-monogram {
+    opacity: 0;
+    z-index: 1; /* Pushes monogram underneath so it doesn't block the wordmark */
+    pointer-events: none; /* Prevents an invisible image from capturing cursor hovers */
+    transform: translateX(-50%) scale(0.8); /* Adds a subtle zoom-in pop when it animates */
+}
+
+/* Scrolled States (Swapped) */
+.scrolled .logo-wordmark {
+    opacity: 0;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.scrolled .logo-monogram {
+    opacity: 1;
+    z-index: 2; /* Brings monogram to the top layer when active */
+    pointer-events: auto;
+    transform: translateX(-50%) scale(1); /* Smoothly scales up to full size */
+}
+
+/* Classes to toggle via JS on scroll */
+.scrolled .logo-wordmark {
+    opacity: 0;
+}
+
+.scrolled .logo-monogram {
+    opacity: 1;
+}
+
+/* ==========================================================================
+   4. LAYOUT / ZEBRA STRIPING
+   ========================================================================== */
+main {
+    margin-top: 80px; /* Offset framework for the fixed header */   
+}
+
+/* ==========================================================================
+   4.5 HERO SECTION (FULL SCREEN - STRATEGY A: RESPONSIVE OVERLAY)
+   ========================================================================== */
+.hero-section {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; 
+    text-align: left;
+    height: calc(100vh - 80px); 
+    width: 100%;
+    position: relative;
+    padding: 0 10%;
+    
+    /* MOBILE DEFAULT: A strong, uniform 85% white wash.
+       This completely neutralizes any dark background elements (like the laptop/desk)
+       on small vertical screens, making your dark text 100% legible. */
+    background: linear-gradient(rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.85)), 
+                url('IMG/desk.jpg') no-repeat center center/cover;
+}
+
+/* DESKTOP REFINEMENT: Restores your beautiful gradient on larger screens */
+@media (min-width: 768px) {
+    .hero-section {
+        /* On screens wider than 768px, we bring back the fading gradient so 
+           the laptop, sketchbook, and drawing pad on the right show through clearly. */
+        background: linear-gradient(
+                        to right, 
+                        rgba(255, 255, 255, 0.95) 0%,   /* Solid backing behind your text */
+                        rgba(255, 255, 255, 0.50) 50%,  /* Softens over the middle desk space */
+                        rgba(255, 255, 255, 0.15) 100%  /* Leaves your sketchbook and laptop crisp */
+                    ), 
+                    url('IMG/desk.jpg') no-repeat center center/cover;
+    }
+}
+
+.hero-content {
+    max-width: 480px; 
+    margin-left: 2%; 
+    animation: fadeIn 1s ease-out;
+}
+
+.hero-title {
+    font-size: 3.5rem;
+    color: #111; 
+    margin-bottom: 1.5rem;
+    text-shadow: none; 
+    text-align: left; 
+}
+
+.hero-subtitle {
+    font-size: 1.35rem;
+    color: #333; /* Slightly lighter charcoal for body copy hierarchy */
+    margin-bottom: 2.5rem;
+    text-shadow: none;
+}
+
+.hero-button {
+    display: inline-block;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: bold;
+    text-decoration: none;
+    /* High contrast dark button with white text so it stands out on the pad */
+    color: #fff;
+    background-color: #111;
+    padding: 1rem 2.5rem;
+    border-radius: 4px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+}
+
+.hero-button:hover {
+    background-color: #333;
+    transform: translateY(-2px);
+}
+
+.hero-button:active {
+    transform: translateY(0);
+}
+
+/* Keyframe animation for the initial load */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive adjustments for smaller screen heights/widths */
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 2.5rem;
+    }
+    .hero-subtitle {
+        font-size: 1.1rem;
+    }
+}
+
+.site-section {
+    padding: 5rem 10%;
+}
+
+/* Even-numbered sections receive light-gray backgrounds */
+.site-section:nth-of-type(even) {
+    background-color: #eee; /* Alternate can be #ddd as requested */
+}
+
+/* ==========================================================================
+   5. FLEXBOX CARDS
+   ========================================================================== */
+.card-container {
+    display: flex;
+    flex-direction: column; /* Stacked by default for small screens */
+    gap: 2rem;
+    margin: 2.5rem 0;
+}
+
+.card {
+    flex: 1;
+    background: transparent;
+    padding: 1rem;
+}
+
+/* Placeholder icon attributes */
+.card-icon {
+    display: block;
+    width: 64px;
+    height: 64px;
+    
+    /* NEW: Auto margins on the sides center the block element.
+       The "1rem" keeps your spacing below the icon intact. */
+    margin: 0 auto 1rem auto; 
+}
+
+/* ==========================================================================
+   6. JAVASCRIPT ANIMATIONS ON SCROLL (INTERSECTION OBSERVER)
+   ========================================================================== */
+.fade-on-scroll {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+/* State when icon triggers element intersection */
+.fade-on-scroll.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ==========================================================================
+   7. EQUAL-WIDTH CONTACT FLEXBOX COLUMNS (UPDATED TO FULL-HEIGHT)
+   ========================================================================== */
+.contact-section {
+    display: flex;
+    flex-direction: column; /* Stacked on mobile platforms */
+    padding: 5rem 10%;
+    background-color: #333;
+    color: #fff;
+    
+    /* NEW: Force the section to span the entire height of the viewport */
+    min-height: calc(100vh - 80px); 
+    
+    /* NEW: Ensures children align and stretch nicely within the full-height container */
+    align-items: center; 
+    justify-content: center;
+}
+
+.contact-column {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+}
+
+.contact-photo {
+    width: 100%;
+    max-width: 350px;
+    height: auto;
+    border-radius: 4px;
+}
+
+.email-link {
+    color: #fff;
+    font-size: 1.5rem;
+    font-family: 'Quicksand', sans-serif;
+    text-decoration: underline;
+}
+
+/* ==========================================================================
+   8. RESPONSIVE MEDIA QUERIES (DESKTOP OPTIMIZATIONS)
+   ========================================================================== */
+@media (min-width: 768px) {
+    /* Shifts card components from vertical columns to horizontal flex layouts */
+    .card-container {
+        flex-direction: row;
+    }
+
+    /* Handles edge layout context for section 5 where there are only 2 elements instead of 3 */
+    .card-container.text-cols-2 .card {
+        max-width: 50%;
+    }
+
+    /* Forces equal-width horizontal layouts for the contact footers */
+    .contact-section {
+        flex-direction: row;
+    }
+
+    .contact-column {
+        width: 50%;
+    }
+}
+
+/* ==========================================================================
+   9. SITE FOOTER
+   ========================================================================== */
+.site-footer {
+    background-color: #111; /* Very dark grey background */
+    color: #fff; /* White text */
+    padding: 2rem 10%;
+    border-top: 1px solid #222; /* Subtle top border separator */
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.copyright-text {
+    font-family: 'Quicksand', sans-serif; /* Clean sans-serif for footer details */
+    font-size: 0.9rem;
+    margin: 0;
+    letter-spacing: 0.05em;
+    opacity: 0.8; /* Slightly muted white for better visual hierarchy */
+}

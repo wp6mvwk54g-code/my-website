@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 1557 2530" version="1.1"
+     xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+     xml:space="preserve" xmlns:serif="http://www.serif.com/"
+     style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+
+  <defs>
+    <!-- IMPORTANT: start clipping at x=843 (where your frame art begins in the transformed group) -->
+    <clipPath id="frameClip" clipPathUnits="userSpaceOnUse">
+      <defs>
+  <clipPath id="frameClip" clipPathUnits="userSpaceOnUse">
+    <!-- key change: y=1068 so both top+bottom paths share the same clip box -->
+    <rect id="frameClipRect" x="843" y="1068" width="0" height="2530"/>
+  </clipPath>
+</defs>
+
+    </clipPath>
+  </defs>
+
+  <g id="Artboard2" transform="matrix(1,0,0,1,-843,-1068)">
+    <rect x="843" y="1068" width="1557" height="2530" style="fill:none;"/>
+
+    <!-- OUTER FRAME: reveal left->right over 0.3s -->
+    <g clip-path="url(#frameClip)">
+      <animate xlink:href="#frameClipRect"
+               attributeName="width"
+               from="0" to="1557"
+               dur="0.3s"
+               fill="freeze"
+               begin="0s"/>
+
+      <!-- Frame shapes -->
+      <path d="M2245.9,3598L997.1,3598C912.05,3598 843,3528.95 843,3443.9L843,2264L1093,2264L1093,3348L2400,3348L2400,3443.9C2400,3528.95 2330.95,3598 2245.9,3598Z"/>
+      <path d="M2150,1318L843,1318L843,1222.1C843,1137.05 912.05,1068 997.1,1068L2245.9,1068C2330.95,1068 2400,1137.05 2400,1222.1L2400,2402L2150,2402L2150,1318Z"/>
+    </g>
+
+    <!-- INNER elements: fade in all at once over 0.2s, starting after outer (0.3s) -->
+    <g opacity="0">
+      <animate attributeName="opacity"
+               from="0" to="1"
+               dur="0.2s"
+               fill="freeze"
+               begin="0.3s"/>
+
+      <!-- T / W / M shapes -->
+      <g transform="matrix(-0.920207,0,0,0.920207,3009.171567,741.649386)">
+        <path d="M1149.5,2313.932L1023.826,2138.641L870,2138.641L791,2665L981.192,2665L1009.296,2396L1149.5,2558.663L1289.704,2396L1317.808,2665L1508,2665L1429,2138.641L1275.174,2138.641L1149.5,2313.932Z"/>
+      </g>
+
+      <g transform="matrix(-1,-0,0,-1,2722,4814)">
+        <path d="M1149.5,2375.932L1299,2182L1508,2665L1317.808,2665L1253.704,2469L1149.5,2620.663L1045.296,2469L981.192,2665L791,2665L1000,2182L1149.5,2375.932Z"/>
+      </g>
+
+      <g transform="matrix(1,0,-0,1,194.25,-222.424732)">
+        <path d="M951,1876L770,1876L770,1702L1306,1702L1306,1876L1125,1876L1125,2206L951,2206L951,1876Z"/>
+      </g>
+
+      <!-- dots -->
+      <circle cx="1350" cy="3103" r="91"/>
+      <g transform="matrix(1,0,0,1,607.739452,-1532.424732)">
+        <circle cx="1350" cy="3103" r="91"/>
+      </g>
+    </g>
+  </g>
+</svg>
